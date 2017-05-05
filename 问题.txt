@@ -27,3 +27,6 @@ alert(b == c);		// true
 alert(a == b);		// false
 alert(c == d);		// true
 5.建议css中的最小最大值可以指定多个
+6.事件代理，父元素下子元素1 mousedown 子元素2 mouseup 
+	firefox：子元素没有click，父元素没有click
+	chrome：子元素没有click，父元素发生click，												
