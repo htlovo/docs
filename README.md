@@ -1,9 +1,9 @@
 # docs
-- [仿站。。。](仿站/)
-	- [github首页](仿站/github首页/)
+- [仿站](仿站/)/
+	- [github首页](仿站/github首页/)/
 		- [github-zh.css](仿站/github首页/github-zh.css)
 		- [github-zh.html](/docs/仿站/github首页/github-zh.html)
-- [css总结。。。](css总结/)
+- [css总结](css总结/)/
 	- [提示.txt](css总结/提示.txt)
 	- [css-secrets.css](css总结/css-secrets.css)
 	- [css-secrets.html](css总结/css-secrets.html)
@@ -12,17 +12,17 @@
 	- [css3.txt](css总结/css3.txt)
 	- [fly.png](css总结/fly.png)
 	- [heart.png](css总结/heart.png)
-- [HTML+CSS手册截图。。。](HTML+CSS手册截图/)
-	- [CSS属性表格。。。](HTML+CSS手册截图/CSS属性表格/)
+- [HTML+CSS手册截图](HTML+CSS手册截图/)/
+	- [CSS属性表格](HTML+CSS手册截图/CSS属性表格/)/
 		- ...
-	- [CSS手册截图。。。](HTML+CSS手册截图/CSS手册截图/)
+	- [CSS手册截图](HTML+CSS手册截图/CSS手册截图/)/
 		- ...
-	- [HTML手册截图。。。](HTML+CSS手册截图/HTML手册截图/)
+	- [HTML手册截图](HTML+CSS手册截图/HTML手册截图/)/
 		- ...
-- [js实例。。。](js实例/)
+- [js实例](js实例/)/
 	- ...
-- [js总结。。。](js总结/)
-	- [正则表达式。。。](js总结/正则表达式/)
+- [js总结](js总结/)/
+	- [正则表达式](js总结/正则表达式/)/
 		- [正则表达式语法图.bmp](js总结/正则表达式/正则表达式语法图.bmp)
 		- [正则表达式语法简图.bmp](js总结/正则表达式/正则表达式语法简图.bmp)
 		- [正则表达式.txt](js总结/正则表达式/正则表达式.txt)
