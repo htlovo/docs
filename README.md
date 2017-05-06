@@ -1,8 +1,8 @@
 # docs
-- [仿站。。。](/仿站/)
-	- [github首页](/仿站/github首页/)
-		- [github-zh.css](/仿站/github首页/github-zh.css)
-		- [github-zh.html](http://www.baidu.com/仿站/github首页/github-zh.html)
+- [仿站。。。](../仿站/)
+	- [github首页](../仿站/github首页/)
+		- [github-zh.css](../仿站/github首页/github-zh.css)
+		- [github-zh.html](../仿站/github首页/github-zh.html)
 - css总结。。。
 	- 提示.txt
 	- css-secrets.css
