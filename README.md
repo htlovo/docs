@@ -37,7 +37,7 @@
 	- [event.js](js总结/event.js)
 	- [JavaScript创建对象.txt](js总结/JavaScript创建对象.txt)
 	- [JavaScript DOM编程艺术.txt](js总结/JavaScript DOM编程艺术.txt)
-	- [js操作符](js总结/js操作符)
+	- [js操作符.txt](js总结/js操作符.txt)
 	- [js tips.txt](js总结/js tips.txt)
 	- [js.txt](js总结/js.txt)
 	- [mooc.js.txt](js总结/mooc.js.txt)
