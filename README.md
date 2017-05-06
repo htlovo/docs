@@ -1,17 +1,17 @@
 # docs
-- [仿站。。。](../仿站/)
-	- [github首页](../仿站/github首页/)
-		- [github-zh.css](../仿站/github首页/github-zh.css)
-		- [github-zh.html](../仿站/github首页/github-zh.html)
+- [仿站。。。](docs/仿站/)
+	- [github首页](docs/仿站/github首页/)
+		- [github-zh.css](docs/仿站/github首页/github-zh.css)
+		- [github-zh.html](docs/仿站/github首页/github-zh.html)
 - css总结。。。
-	- 提示.txt
-	- css-secrets.css
-	- css-secrets.html
-	- css-secrets.js
-	- css2.1层叠.txt
-	- css3.txt
-	- fly.png
-	- heart.png
+	- [提示.txt](docs/css总结/提示.txt)
+	- [css-secrets.css](../css总结/css-secrets.css)
+	- [css-secrets.html](css总结/css-secrets.html)
+	- [css-secrets.js](/docs/css总结/css-secrets.js)
+	- [css2.1层叠.txt](docs/css总结/css2.1层叠.txt)
+	- [css3.txt](docs/css总结/css3.txt)
+	- [fly.png](docs/css总结/fly.png)
+	- [heart.png](docs/css总结/heart.png)
 - HTML+CSS手册截图。。。
 	- CSS属性表格。。。
 		- ...
