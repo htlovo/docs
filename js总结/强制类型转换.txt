@@ -6,9 +6,13 @@
 2.抽象值操作
 	1.ToString
 		转换规则如下：
-			如果值是null，则返回"null" ； 
-			如果值是undefined，则返回"undefined"；
-			如果值有toString()方法，则调用该方法（没有参数）并返回相应的结果。
+			如果是Boolean值，true 和false 将分别被转换为"true"和"false"。 
+			如果是数字值，返回数字的字符串形式
+			如果是字符串，只是简单的传入和返回。
+			如果是null，则返回"null" ； 
+			如果是undefined，则返回"undefined"；
+			如果是对象，则对其进行到字符串的ToPrimitive抽象操作并将返回值转换为字符串
+
 		JSON 字符串化
 			...
 	2.ToNumber
@@ -24,7 +28,7 @@
 				如果字符串中包含"0x"和"." ，则将其转换为NaN 。
 				如果字符串是空的或只包含空格，则将其转换为0； 
 				如果字符串中包含除上述格式之外的字符，则将其转换为NaN 。
-			如果是对象，则调用其valueOf()方法，如果没有该方法或不返回基本类型值，则调用其toString()方法。然后依照前面的规则转换返回值。如果toString()方法也没有或不返回基本类型值，会产生TypeError 错误
+			如果是对象，则对其进行到数字的ToPrimitive抽象操作并将返回值转换为数字
 		从ES5 开始，使用Object.create(null) 创建的对象[[Prototype]] 属性为null，并且没有valueOf() 和toString()方法，因此无法进行强制类型转换。
 	3.ToBoolean
 		假值的布尔强制类型转换结果为false,这些是假值：
@@ -42,7 +46,7 @@
 3.显式强制类型转换
 	1.字符串和数字之间的显式转换
 		字符串和数字之间的转换可通过String(..)和Number(..)这两个内建函数来实现。
-		String(..)遵循前面讲过的ToString规则。Number(..)遵循ToNumber规则。
+		String(..)遵循ToString规则。Number(..)遵循ToNumber规则。
 		toString()是显式的，不过其中涉及隐式转换。因为toString()对42这样的基本类型值不适用，所以JavaScript 引擎会自动为42创建一个封装对象，然后对该对象调用toString()。
 		一元加操作符的操作与Number() 函数相同。
 		1. 日期显式转换为数字
@@ -104,45 +108,21 @@
 		如果两个值的类型不同，就考虑有没有强制类型转换的必要，有就用==，没有就用===，不用在乎性能。
 		==和=== 都会检查操作数的类型。操作数类型不同时它们的处理方式不同。
 	2.抽象相等
-		“抽象相等比较算法”定义了==运算符的行为。
-			如果两个值的类型相同，就仅比较它们是否相等。
+		如果两个值的类型相同时，
+			仅比较它们是否相等。不进行类型转换
 			特别的，NaN不等于NaN，+0等于-0
 			两个对象指向同一个值时即视为相等，不发生强制类型转换。
-		以上也是===运算符的工作原理，
-		==在比较两个不同类型的值时会发生隐式强制类型转换，会将其中之一或两者都转换为相同的类型后再进行比较。
-		1.字符串和数字之间的相等比较
-			将字符串转化为数字，再进行比较
-			(1)  如果Type(x) 是数字，Type(y) 是字符串，则返回x == ToNumber(y)的结果。
-			(2)  如果Type(x) 是字符串，Type(y) 是数字，则返回ToNumber(x) == y的结果。
-		2.其他类型和布尔类型之间的相等比较
-			将布尔值转化为数字，再进行比较，
-			(1)  如果Type(x) 是布尔类型，则返回ToNumber(x) == y的结果；
-			(2)  如果Type(y) 是布尔类型，则返回x == ToNumber(y)的结果。
-		3.null和undefined 之间的相等比较
-			null和undefined 之间的==也涉及隐式强制类型转换。
-			(1)  如果x 为null，y 为undefined ，则结果为true。
-			(2)  如果x 为undefined ，y 为null，则结果为true。
-			在==中null和undefined 相等（它们也与其自身相等），除此之外他们不和任何值相等。
-		4.对象和非对象之间的相等比较
-			将对象进行ToPrimitive()操作即
-			(1)  如果Type(x) 是字符串或数字，Type(y) 是对象，则返回x == ToPrimitive(y) 的结果；
-			(2)  如果Type(x) 是对象，Type(y) 是字符串或数字，则返回ToPromitive(x) == y 的结果。
+		如果两个值的类型不相同时，
+			===会返回false。
+			==会发生隐式强制类型转换，会将其中之一或两者都转换为相同的类型后再进行比较：
+				NaN和任何值都不相等
+				null，undefined两者相等并且与自身相等，但不与其他任何值相等，
+				操作数中有一个对象时，对对象进行到数字的ToPrimitive()操作，
+				操作数中有一个是数字或布尔值时，都转化为数字进行比较
+
 	3.比较少见的情况
 		1. 返回其他数字
 			内置原生原型被更改导致的奇怪结果
-			Number.prototype.valueOf = function() { 
-			    return 3; 
-			}; 
-			new Number( 2 ) == 3;   // true
-			另
-			var i = 2; 
-			Number.prototype.valueOf = function() { 
-			    return i++; 
-			}; 
-			var a = new Number( 42 ); 
-			if (a == 2 && a == 3) { 
-			    console.log( "Yep, this happened." ); 
-			}
 			我们应该正确合理地运用强制类型转换，避免这些极端的情况。
 		2.假值的相等比较
 			"0" == null;           // false 
@@ -193,20 +173,28 @@
 
 
 
-		toString()
-			null 和undefined 值没有toString方法
-			在调用数值的 toString() 方法时，可以传递一个参数：输出数值的基数。默认情况下，toString() 方法以十进制格式返回数值的字符串表示。而通过传递基数，toString() 可以输出任意有效进制格式表示的字符串值。
-			对普通对象来说，除非自行定义，否则toString()返回内部属性[[Class]] 的值，如"[object Object]"。
-			如果对象有自己的toString()方法，字符串化时就会调用该方法并使用其返回值。
-			数组的默认toString()方法经过了重新定义，将所有单元字符串化以后再用", " 连接起来,如果数组中的某一项的值是 null 或者undefined，那么该值在toString() 方法返回的结果中以空字符串表示。
-			Date 类型的toLocaleString()方法会按照与浏览器设置的地区相适应的格式返回日期和时间。这大致意味着时间格式中会包含AM 或PM，但不会包含时区信息。而 toString() 方法则通常返回带有时区信息的日期和时间，其中时间一般以军用时间（即小时的范围是0 到23）表示。
-			RegExp 实例继承的toLocaleString() 和toString() 方法都会返回正则表达式的字面量
-			每个函数继承的toLocaleString()和toString() 方法始终都返回函数的代码。返回代码的格式则因浏览器而异——有的返回的代码与源代码中的函数代码一样，而有的则返回函数代码的内部表示，即由解析器删除了注释并对某些代码作了改动后的代码。
-			Boolean类型的实例重写了 toString()方法，返回字符串"true"和"false"
+	toString()
+		数字，字符串，布尔值都有toString()方法，调用时会用Number(),String(),Boolean()封装为对象,再调用对应的原生原型对象的toString()。
+		如果对象有自己的toString()方法，就调用该方法并使用其返回值。
+		null 和undefined 值没有toString方法
+		对普通对象来说，默认的toString()返回内部属性[[Class]] 的值，如"[object Object]"。
+		在调用数值的 toString() 方法时，可以传递一个参数：输出数值的基数。默认情况下，toString() 方法以十进制格式返回数值的字符串表示。而通过传递基数，toString() 可以输出任意有效进制格式表示的字符串值。
+		数组的默认toString()方法经过了重新定义，将所有单元字符串化以后再用", " 连接起来,如果数组中的某一项的值是 null 或者undefined，那么该值在toString() 方法返回的结果中以空字符串表示。
+		Date 类型的toLocaleString()方法会按照与浏览器设置的地区相适应的格式返回日期和时间。这大致意味着时间格式中会包含AM 或PM，但不会包含时区信息。而 toString() 方法则通常返回带有时区信息的日期和时间，其中时间一般以军用时间（即小时的范围是0 到23）表示。
+		RegExp 实例继承的toLocaleString() 和toString() 方法都会返回正则表达式的字面量
+		每个函数继承的toLocaleString()和toString() 方法始终都返回函数的代码。返回代码的格式则因浏览器而异——有的返回的代码与源代码中的函数代码一样，而有的则返回函数代码的内部表示，即由解析器删除了注释并对某些代码作了改动后的代码。
+		Boolean类型的实例重写了 toString()方法，返回字符串"true"和"false"
 
-
-
-		valueOf()
+	valueOf()
+	
+	对象到数字的ToPrimitive抽象操作
+		首先判断是否有valueOf()方法并返回基本类型值，是的话调用valueOf()方法，
+		否则判断是否有toString()方法并返回基本类型值，是的话调用toString()方法，
+		否则产生TypeError 错误
+	对象到字符串的ToPrimitive抽象操作
+		首先判断是否有toString()方法并返回基本类型值，是的话调用toString()方法，
+		否则判断是否有valueOf()方法并返回基本类型值，是的话调用valueOf()方法，
+		否则产生TypeError 错误
 	
 
 
