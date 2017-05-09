@@ -15,7 +15,6 @@
 - [HTML总结](HTML总结/)
 	- [表单.txt](HTML总结/表单.txt)
 	- [表单.html](HTML总结/表单.html)
-	- [show-data.php](HTML总结/show-data.php)
 - [HTML+CSS手册截图](HTML+CSS手册截图/)/
 	- [CSS属性表格](HTML+CSS手册截图/CSS属性表格/)/
 		- ...
@@ -50,4 +49,5 @@
 - [计划表.xls](计划表.xls)
 - [问题.txt](问题.txt)
 - [markdown语法.txt](markdown语法.txt)
+- [show-data.php](show-data.php)
 - [README.md](README.md)
