@@ -70,7 +70,7 @@ Like all PHP code, this PHP script needs to be run on a web server to work. Plea
 
 2) Open form.html in your text editor and make sure the action attribute is set to show-data.php, as shown below:
 
-	<form method="post" action="show-data.php" enctype="multipart/form-data">
+	<form method="GET" action="show-data.php" enctype="multipart/form-data">
 
 It should be set to this already if you didn't change it after downloading it from the book site.
 
@@ -109,10 +109,10 @@ Search online for more information about using one of these packages.
 </tr>
 
 <?php
-if (empty($_POST)) {
+if (empty($_GET)) {
 	print "<tr><td colspan=\"2\"><p>No data was submitted.</p></td></tr>";
 } else { /* Data was submitted, so show it in the page. */
-	foreach ($_POST as $key => $value) {
+	foreach ($_GET as $key => $value) {
 		
 		/* Cleans up quoted values. See: 
 				http://us2.php.net/manual/en/function.get-magic-quotes-gpc.php
@@ -127,9 +127,9 @@ if (empty($_POST)) {
 		/* Check the form field and print its value in a table row */
 		if ($key == 'email_signup') { // True if one of the Email checkboxes at end
 			
-			if (is_array($_POST['email_signup'])) { // True if a checkbox checked
+			if (is_array($_GET['email_signup'])) { // True if a checkbox checked
 				// Print the name of the checkbox form field and the value
-				foreach ($_POST['email_signup'] as $value) {
+				foreach ($_GET['email_signup'] as $value) {
 					print "<tr><td><code>$value</code></td><td>"; 
 					print "<i>on</i>";
 					print "</td></tr>\n";
