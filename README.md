@@ -49,5 +49,4 @@
 - [计划表.xls](计划表.xls)
 - [问题.txt](问题.txt)
 - [markdown语法.txt](markdown语法.txt)
-- [show-data.php](show-data.php)
 - [README.md](README.md)
