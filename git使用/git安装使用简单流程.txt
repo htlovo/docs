@@ -1,0 +1,77 @@
+
+准备工作
+
+安装
+Git for Windows(msysGit),不同于Git,http://msysgit.github.io
+http://git-scm.com/download/win
+GitHub for Wondows,包含图形化和命令行版本的Git
+http://windows.github.com
+
+设置用户名称与邮箱地址,如：
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+配置默认文本编辑器，如使用Emacs:
+$ git config -global core.editor emacs
+
+
+使用
+
+
+获取Git仓库
+初始化一个已有项目，并跟踪已有文件：
+进入该项目目录，执行
+$ git init
+$ git add .
+$ git commit -m "提交信息"
+克隆现有仓库
+$ git clone [url]
+若要为本地仓库命名
+$ git clone [url] name
+
+跟踪新文件，暂存已修改文件
+$ git add .
+
+提交
+$ git commit -m "提交信息"
+
+推送到远程仓库
+$ git push origin master
+
+将本地的master分支推送到origin主机，同时指定origin为默认主机
+$ git push -u origin master
+
+从远程仓库拉取本地仓库没有的数据，即获取最新的远程仓库,合并到本地仓库
+$ git pull origin master
+
+
+其他
+
+列出所有Git当时能找到的配置
+$ git config --list
+
+检查Git的某一项配置
+$ git config <key>
+
+获取帮助
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+
+检查当前文件状态
+$ git status
+
+状态简览
+$ git status -s
+$ git status --short
+
+比较工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容
+$ git diff
+
+查看已暂存的要添加到下次提交里的内容
+$ git diff --staged
+$ git diff --cached
+
+
+
+
