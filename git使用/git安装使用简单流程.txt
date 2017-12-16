@@ -72,6 +72,10 @@ $ git diff
 $ git diff --staged
 $ git diff --cached
 
+查看远程仓库
+$ git remote -v
+$ git remote show [remote-name]
+
 
 
 

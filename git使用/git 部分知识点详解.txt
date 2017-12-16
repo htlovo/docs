@@ -3,7 +3,7 @@ git 部分知识点详解
 设置SSH Key
 git push 命令
 git add 命令
-
+更改git push 密码
 
 
 
@@ -146,4 +146,17 @@ git add .	有			有			有			Stage All(new,modified,deleted) files
 git add --ignor-removal有	有		无			Stage New and Modified files only
 git add -u	无			有			有			Stage Modified and Deleted files only
  
+
+ 如何修改git push时的密码
+如下:
+
+    打开git bash
+    输入 cd ~/.ssh
+    ls 确定有 id_rsa 和 id_rsa.pub文件
+    ssh-keygen -p -f id_rsa
+    第一次输入旧密码
+    新密码
+    确认新密码
+
+
 git diff
