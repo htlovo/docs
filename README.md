@@ -17,7 +17,7 @@
 	- [git安装使用简单流程.txt](git使用/git安装使用简单流程.txt)
 	- [Pro Git 第2版 大致内容.txt](git使用/Pro Git 第2版 大致内容.txt)
 	- [常用 Git 命令清单.txt](git使用/常用 Git 命令清单.txt)
-- [HTML总结](HTML总结/)
+- [HTML总结](HTML总结/)/
 	- [表单.txt](HTML总结/表单.txt)
 	- [表单.html](HTML总结/表单.html)
 - [HTML+CSS手册截图](HTML+CSS手册截图/)/
