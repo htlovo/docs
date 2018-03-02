@@ -12,9 +12,12 @@
 	- [css3.txt](css总结/css3.txt)
 	- [fly.png](css总结/fly.png)
 	- [heart.png](css总结/heart.png)
-- [git使用](git使用)/
-	- ...
-- [HTML总结](HTML总结/)
+- [git使用](git使用/)/
+	- [git 部分知识点详解.txt](git使用/git 部分知识点详解.txt)
+	- [git安装使用简单流程.txt](git使用/git安装使用简单流程.txt)
+	- [Pro Git 第2版 大致内容.txt](git使用/Pro Git 第2版 大致内容.txt)
+	- [常用 Git 命令清单.txt](git使用/常用 Git 命令清单.txt)
+- [HTML总结](HTML总结/)/
 	- [表单.txt](HTML总结/表单.txt)
 	- [表单.html](HTML总结/表单.html)
 - [HTML+CSS手册截图](HTML+CSS手册截图/)/
@@ -32,6 +35,7 @@
 		- [正则表达式语法简图.bmp](js总结/正则表达式/正则表达式语法简图.bmp)
 		- [正则表达式.txt](js总结/正则表达式/正则表达式.txt)
 		- [正则.bmp](js总结/正则表达式/正则.bmp)
+	- [BOM.md](js总结/BOM.md)
 	- [事件.txt](js总结/事件.txt)
 	- [强制类型转换.txt](js总结/强制类型转换.txt)
 	- [操作符.xls](js总结/操作符.xls)
