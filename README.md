@@ -17,6 +17,7 @@
 	- [git安装使用简单流程.txt](git使用/git安装使用简单流程.txt)
 	- [Pro Git 第2版 大致内容.txt](git使用/Pro Git 第2版 大致内容.txt)
 	- [常用 Git 命令清单.txt](git使用/常用 Git 命令清单.txt)
+	- [git 问题.txt](git使用/git 问题.txt)
 - [HTML总结](HTML总结/)/
 	- [表单.txt](HTML总结/表单.txt)
 	- [表单.html](HTML总结/表单.html)
@@ -27,8 +28,12 @@
 		- ...
 	- [HTML手册截图](HTML+CSS手册截图/HTML手册截图/)/
 		- ...
+- [jQuery](jQuery/)/
+	- [Learning-jQuery.txt](jQuery/Learning-jQuery.txt)
 - [js实例](js实例/)/
-	- ...
+	- [gallery](js实例/gallery/)/
+		- ...
+		- [gallery1.html](js实例/gallery/gallery1.html)
 - [js总结](js总结/)/
 	- [正则表达式](js总结/正则表达式/)/
 		- [正则表达式语法图.bmp](js总结/正则表达式/正则表达式语法图.bmp)
@@ -46,6 +51,7 @@
 	- [event.js](js总结/event.js)
 	- [JavaScript创建对象.txt](js总结/JavaScript创建对象.txt)
 	- [JavaScript DOM编程艺术.txt](js总结/JavaScript DOM编程艺术.txt)
+	- [JavaScript高级程序设计总结.txt](js总结/JavaScript高级程序设计总结.txt)
 	- [js操作符.txt](js总结/js操作符.txt)
 	- [js tips.txt](js总结/js tips.txt)
 	- [js.txt](js总结/js.txt)
